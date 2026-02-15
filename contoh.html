@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sate Madura Mantap - Sate Asli Madura Terlezat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset dan gaya dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fef9f3;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #8b0000; /* Merah tua khas sate */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Sticky Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #8b0000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero h1 span {
+            color: #ffd700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #8b0000;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Menu Section */
+        .menu-section {
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: #8b0000;
+            margin: 15px auto;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-content {
+            padding: 20px;
+        }
+
+        .menu-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #8b0000;
+        }
+
+        .menu-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #8b0000;
+        }
+
+        /* Lokasi Section */
+        .location-section {
+            background-color: #f5f1eb;
+        }
+
+        .locations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .location {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-header {
+            background-color: #8b0000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .location-header h3 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .location-info {
+            padding: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            color: #8b0000;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .info-item h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .map-container {
+            height: 200px;
+            width: 100%;
+            background-color: #ddd;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: #ffd700;
+        }
+
+        .footer-about p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .footer-heading {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #8b0000;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: #8b0000;
+                padding: 20px;
+                transition: left 0.3s;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 100px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .locations {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Sate Madura<span>Mantap</span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#lokasi">Lokasi</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Sate Madura <span>Mantap</span></h1>
+            <p>Nikmati sate Madura paling mantap dengan bumbu kacang rahasia turun-temurun!</p>
+            <a href="#menu" class="cta-button">Lihat Menu Kami</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <h2 class="section-title">Menu Andalan Kami</h2>
+            <div class="menu-items">
+                <!-- Menu 1 -->
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sate Ayam" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Sate Ayam</h3>
+                        <p>Daging ayam pilihan yang dibumbui rempah khas Madura, dipanggang dengan arang kayu.</p>
+                        <div class="price">Rp 25.000 / 10 tusuk</div>
+                    </div>
+                </div>
+                
+                <!-- Menu 2 -->
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="Sate Kambing" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Sate Kambing</h3>
+                        <p>Daging kambing muda yang empuk dengan bumbu kacang khas Madura yang gurih.</p>
+                        <div class="price">Rp 35.000 / 10 tusuk</div>
+                    </div>
+                </div>
+                
+                <!-- Menu 3 -->
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sate Campur" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Sate Campur</h3>
+                        <p>Kombinasi sempurna sate ayam dan kambing dengan lontong dan bumbu kacang spesial.</p>
+                        <div class="price">Rp 30.000 / paket</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokasi Section -->
+    <section class="location-section" id="lokasi">
+        <div class="container">
+            <h2 class="section-title">Lokasi Kami</h2>
+            <div class="locations">
+                <!-- Lokasi Kemuning -->
+                <div class="location">
+                    <div class="location-header">
+                        <h3>Outlet Kemuning</h3>
+                    </div>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>Jl. Kemuning Raya No. 45, Kelurahan Kemuning, Kecamatan Tangerang</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Jam Buka</h4>
+                                <p>Setiap Hari: 10.00 - 22.00 WIB</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telepon</h4>
+                                <p>(021) 5567-8901</p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <p>Peta Google Maps (Kemuning)</p>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Sate%20Madura%20Mantap%20Outlet%20Kemuning,%20saya%20ingin%20memesan%20sate" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lokasi Palm -->
+                <div class="location">
+                    <div class="location-header">
+                        <h3>Outlet Palm</h3>
+                    </div>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>Jl. Palm Merah No. 12, Kelurahan Palm, Kecamatan Tangerang Selatan</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Jam Buka</h4>
+                                <p>Setiap Hari: 11.00 - 23.00 WIB</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telepon</h4>
+                                <p>(021) 5567-8902</p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <p>Peta Google Maps (Palm)</p>
+                        </div>
+                        <a href="https://wa.me/6281234567891?text=Halo%20Sate%20Madura%20Mantap%20Outlet%20Palm,%20saya%20ingin%20memesan%20sate" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Sate Madura<span>Mantap</span></div>
+                    <p>Menghidangkan sate Madura asli dengan resep turun-temurun sejak 1995. Rasa yang mantap, pelayanan yang ramah, dan harga terjangkau.</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:info@satemaduramantap.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/6281234567890">0812-3456-7890</a></li>
+                        <li><i class="fas fa-envelope"></i> Email: info@satemaduramantap.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kantor Pusat: Jl. Kemuning Raya No. 45, Tangerang</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#lokasi">Lokasi</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Sate Madura Mantap. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Kode JavaScript untuk menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            // Toggle menu mobile saat tombol diklik
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                // Ganti ikon menu
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+            });
+            
+            // Tutup menu mobile saat link diklik
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    // Kembalikan ikon ke menu bar
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon.classList.contains('fa-times')) {
+                        icon.classList.replace('fa-times', 'fa-bars');
+                    }
+                });
+            });
+            
+            // Smooth scrolling untuk link navigasi
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

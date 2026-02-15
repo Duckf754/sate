@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sate Mantap - Kemuning & Palm</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; }
+header { background:#ff5733; color:white; text-align:center; padding:40px 20px; }
+header h1 { margin:0; }
+button { background:#28a745; color:white; border:none; padding:10px 20px; cursor:pointer; font-size:16px; border-radius:5px; }
+section { padding:20px; }
+.menu { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+.menu-item { border:1px solid #ddd; padding:10px; width:200px; text-align:center; border-radius:5px; }
+.location { margin-top:20px; }
+.map { width:100%; height:250px; border:0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sate Mantap</h1>
+  <p>Pilih lokasi pembelian:</p>
+  <button onclick="window.location.href='#kemuning'">Kemuning</button>
+  <button onclick="window.location.href='#palm'">Palm</button>
+</header>
+
+<section id="menu">
+  <h2>Menu Sate</h2>
+  <div class="menu">
+    <div class="menu-item">
+      <h3>Sate Ayam</h3>
+      <p>Rp15.000</p>
+    </div>
+    <div class="menu-item">
+      <h3>Sate Kambing</h3>
+      <p>Rp20.000</p>
+    </div>
+    <!-- Tambah menu lain -->
+  </div>
+</section>
+
+<section id="kemuning" class="location">
+  <h2>Lokasi Kemuning</h2>
+  <p>Alamat: Jalan Kemuning No.1</p>
+  <p>Jam buka: 10.00 - 22.00</p>
+  <button onclick="window.location.href='https://wa.me/nomor_kemuning'">Pesan via WhatsApp</button>
+  <iframe class="map" src="https://www.google.com/maps/embed?...Kemuning"></iframe>
+</section>
+
+<section id="palm" class="location">
+  <h2>Lokasi Palm</h2>
+  <p>Alamat: Jalan Palm No.2</p>
+  <p>Jam buka: 10.00 - 22.00</p>
+  <button onclick="window.location.href='https://wa.me/nomor_palm'">Pesan via WhatsApp</button>
+  <iframe class="map" src="https://www.google.com/maps/embed?...Palm"></iframe>
+</section>
+
+<footer style="text-align:center; padding:20px; background:#eee;">
+  <p>Kontak: WA / IG</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sate Barokah - Sate Asli Terlezat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tombolmenu.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Sate <span> Barokah </span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#lokasi">Lokasi</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="#home">
+        <div class="container">
+            <h1>Sate <span>Barokah</span></h1>
+            <p>Nikmati sate paling mantap dengan bumbu kacang rahasia turun-temurun!</p>
+            <a href="#menu" class="cta-button">Lihat Menu Kami</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <h2 class="section-title">Menu Andalan Kami</h2>
+            <div class="menu-items">
+                <!-- Menu 1 - Sate Ayam -->
+                <div class="menu-item">
+                    <img src="sate-ayam.png" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Sate Ayam</h3>
+                        <p>Daging ayam pilihan yang dibumbui rempah khas, dipanggang dengan arang kayu.</p>
+                        <div class="price">Rp 20.000 / 10 tusuk</div>
+                        <div class="order-controls">
+                            <button class="qty-btn minus" onclick="updateQuantity('ayam', -1)">-</button>
+                            <input type="number" id="qtyAyam" min="0" value="0" class="qty-input" onchange="updateTotal()">
+                            <button class="qty-btn plus" onclick="updateQuantity('ayam', 1)">+</button>
+                            <span class="qty-label">Porsi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu 2 - Sate Kambing -->
+                <div class="menu-item">
+                    <img src="sate-kambing.png" alt="Sate Kambing" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Sate Kambing</h3>
+                        <p>Daging kambing muda yang empuk dengan bumbu kacang khas yang gurih.</p>
+                        <div class="price">Rp 30.000 / 10 tusuk</div>
+                        <div class="order-controls">
+                            <button class="qty-btn minus" onclick="updateQuantity('kambing', -1)">-</button>
+                            <input type="number" id="qtyKambing" min="0" value="0" class="qty-input" onchange="updateTotal()">
+                            <button class="qty-btn plus" onclick="updateQuantity('kambing', 1)">+</button>
+                            <span class="qty-label">Porsi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 3 - Gulai Kambing -->
+                <div class="menu-item">
+                    <img src="img/gulai kambing.jfif" alt="Gulai Kambing" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Gulai Kambing</h3>
+                        <p>Gulai kambing rempah khas dengan kuah gurih dan daging empuk.</p>
+                        <div class="price">Rp 30.000 / porsi</div>
+                        <div class="order-controls">
+                            <button class="qty-btn minus" onclick="updateQuantity('gulai', -1)">-</button>
+                            <input type="number" id="qtyGulai" min="0" value="0" class="qty-input" onchange="updateTotal()">
+                            <button class="qty-btn plus" onclick="updateQuantity('gulai', 1)">+</button>
+                            <span class="qty-label">Porsi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu 4 - Soto Ayam Kampung -->
+                <div class="menu-item">
+                    <img src="img/soto ayam kampung.jfif" alt="Soto Ayam Kampung" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Soto Ayam Kampung</h3>
+                        <p>Soto ayam kampung hangat dengan kuah bening segar dan rempah alami.</p>
+                        <div class="price">Rp 15.000 / porsi</div>
+                        <div class="order-controls">
+                            <button class="qty-btn minus" onclick="updateQuantity('soto', -1)">-</button>
+                            <input type="number" id="qtySoto" min="0" value="0" class="qty-input" onchange="updateTotal()">
+                            <button class="qty-btn plus" onclick="updateQuantity('soto', 1)">+</button>
+                            <span class="qty-label">Porsi</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Menu 5 - Lontong -->
+                <div class="menu-item">
+                    <img src="lontong.jpg"   alt="Lontong" class="menu-img">
+                    <div class="menu-content">
+                        <h3>Lontong</h3>
+                        <p>Lontong nasi pulen sebagai pendamping sate yang sempurna.</p>
+                        <div class="price">Rp 4.000 / potong</div>
+                        <div class="order-controls">
+                            <button class="qty-btn minus" onclick="updateQuantity('lontong', -1)">-</button>
+                            <input type="number" id="qtyLontong" min="0" value="0" class="qty-input" onchange="updateTotal()">
+                            <button class="qty-btn plus" onclick="updateQuantity('lontong', 1)">+</button>
+                            <span class="qty-label">Potong</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3>Ringkasan Pesanan</h3>
+                <div id="orderDetails">
+                    <p>Belum ada pesanan. Pilih menu yang ingin dipesan.</p>
+                </div>
+                <div class="total-container">
+                    <h3>Total Pesanan: <span id="displayTotal">Rp 0</span></h3>
+                </div>
+                <div class="delivery-option">
+                    <label>
+                        <input type="checkbox" id="deliveryOption" onchange="toggleDeliveryInfo()">
+                        Saya ingin pesanan diantar ke rumah (Delivery)
+                    </label>
+                    <div id="deliveryInfo" class="delivery-info">
+                        <p><i class="fas fa-info-circle"></i> Catatan: Untuk delivery wajib minimal 5 porsi menu utama (Sate Ayam/Sate Kambing/Gulai Kambing/Soto Ayam Kampung). Lontong tidak dihitung.</p>
+                    </div>
+                </div>
+                <div class="delivery-option">
+                    <label>
+                        <input type="checkbox" id="dineInOption" onchange="toggleDineInInfo()">
+                        Saya sedang di warung (makan di tempat)
+                    </label>
+                    <div id="dineInInfo" class="delivery-info">
+                        <input type="number" id="tableNumber" min="1" placeholder="Meja ke berapa?">
+                    </div>
+                </div>
+                <button onclick="prosesPesanan()" class="whatsapp-btn order-btn" id="orderActionBtn">
+                    <i class="fas fa-receipt"></i> Beli
+                </button>
+                <div id="deliveryFormWrapper" class="delivery-form-wrapper">
+                    <h4>Isi Data Pengantaran</h4>
+                    <form id="deliveryForm" class="delivery-form">
+                        <input type="text" id="customerName" placeholder="Nama penerima" required>
+                        <input type="tel" id="customerPhone" placeholder="No. HP penerima" required>
+                        <textarea id="customerAddress" rows="3" placeholder="Alamat lengkap pengantaran" required></textarea>
+                        <textarea id="customerNote" rows="2" placeholder="Catatan untuk kurir (opsional)"></textarea>
+                        <button type="submit" class="whatsapp-btn order-btn">
+                            <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokasi Section -->
+    <section class="location-section" id="lokasi">
+        <div class="container">
+            <h2 class="section-title">Lokasi Kami</h2>
+            <div class="locations">
+                <!-- Lokasi Kemuning -->
+                <div class="location">
+                    <div class="location-header">
+                        <h3>Outlet Kemuning</h3>
+                    </div>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>Jl. Kemuning Raya No. 45, Kelurahan Kemuning, Kecamatan Tangerang</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Jam Buka</h4>
+                                <p>Setiap Hari: 17.00 - 00.30 WIta</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telepon</h4>
+                                <p>0819-9574-1457</p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6033926274336!2d106.697966!3d-6.182798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7f9c8b9b9b9%3A0x3b2b2b2b2b2b2b2b!2sJl.%20Kemuning%20Raya%20No.45%2C%20Kelurahan%20Kemuning%2C%20Kecamatan%20Tangerang!5e0!3m2!1sid!2sid!4v1621234567890!5m2!1sid!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <a href="https://wa.me/6281995741457?text=Halo%20Sate%20Barokah%20Outlet%20Kemuning,%20saya%20ingin%20memesan%20sate" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lokasi Palm -->
+                <div class="location">
+                    <div class="location-header">
+                        <h3>Outlet Palm</h3>
+                    </div>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Alamat</h4>
+                                <p>Jl. Palm Merah No. 12, Kelurahan Palm, Kecamatan Tangerang Selatan</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Jam Buka</h4>
+                                <p>Setiap Hari: 17.00 - 00.30 WITA</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telepon</h4>
+                                <p>081995741457</p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6033926274336!2d106.697966!3d-6.182798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7f9c8b9b9b9%3A0x3b2b2b2b2b2b2b2b!2sJl.%20Palm%20Merah%20No.12%2C%20Kelurahan%20Palm%2C%20Kecamatan%20Tangerang%20Selatan!5e0!3m2!1sid!2sid!4v1621234567890!5m2!1sid!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <a href="https://wa.me/6281995741457?text=Halo%20Sate%20Barokah%20Outlet%20Palm,%20saya%20ingin%20memesan%20sate" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Sate <span>Barokah</span></div>
+                    <p>Menghidangkan sate asli dengan resep turun-temurun sejak 1995. Rasa yang mantap, pelayanan yang ramah, dan harga terjangkau.</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:info@satebarokah.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Kontak Kami</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/6281995741457">081-9957-41457</a></li>
+                        <li><i class="fas fa-envelope"></i> Email: info@satebarokah.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kantor Pusat: Jl. Kemuning Raya No. 45, Tangerang</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#lokasi">Lokasi</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Sate Barokah. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="validasi.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
